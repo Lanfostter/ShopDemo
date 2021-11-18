@@ -1,0 +1,19 @@
+<div th:fragment="header">
+	<div class="menu text-center">
+		<div class="wrapper">
+			<ul>
+				<li><a th:href="@{/admin/index}">Trang chủ</a></li>
+				<li><a th:href="@{/admin/list-user}">Danh sách người dùng</a></li>
+				<li><a th:href="@{/admin/list-product}">Thêm sản phẩm</a></li>
+				<li><a th:href="@{/logout}">Đăng xuất</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div th:fragment="footer">
+	<div class="footer">
+		<div class="wrapper">
+			<p class="text-center">2021 Bảo lưu mọi quyền.</p>
+		</div>
+	</div>
+</div>

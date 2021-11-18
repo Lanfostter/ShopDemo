@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html layout:decorator="admin/template">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body layout:fragment="content">
+	<div class="container-fluid">
+		<div>
+			<div style="height: 200px"
+				class="d-flex justify-content-center d-flex align-items-center">
+				<p class="h1">List Product</p>
+			</div>
+			<div>
+				<div class="row">
+					<div class="col-md"></div>
+					<div class="col-md-10">
+						<form style="width: 100%">
+							<a class="btn btn-primary bt-add" th:href="@{/admin/add-product}">Thêm
+								sản phẩm</a> <br> <br>
+							<table class="table table-striped">
+								<thead class="table-dark">
+									<tr>
+										<th>ID</th>
+										<th>Tên</th>
+										<th>Giá</th>
+										<th>Ngày nhập</th>
+										<th>Hạn sử dụng</th>
+										<th>Nhà sản xuất</th>
+										<th>Sản phẩm</th>
+										<th>Edit</th>
+										<th>Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="p : ${products}">
+										<td colspan="1" class="" th:text="${p.id}"></td>
+										<td colspan="1" th:text="${p.name}"></td>
+										<td colspan="1" th:text="${p.price}"></td>
+										<td colspan="1" th:text="${p.importdate}"></td>
+										<td colspan="1" th:text="${p.expirydate}"></td>
+										
+										<td colspan="1" th:text="${p.translation?.name}"></td>
+ 										<td colspan="1">
+											<div class="card" style="width: 5rem;">
+												<img th:src="@{'/download?image='+${p.img}}"
+													class="card-img-top" alt="...">
+											</div>
+										</td>
+										<td colspan="1"><a class="btn btn-success bt-add"
+											th:href="@{#}"><i
+												class="fa-solid fa-wrench"></i></a></td>
+										<td colspan="1"><a class="btn btn-danger"
+											th:href="@{#}"><i
+												class="fa-solid fa-user-slash"></i></a></td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+					<div class="col-md"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
